@@ -1,0 +1,14 @@
+/Users/chris/sdg-assignments/week-9/safari-api/bin/Debug/netcoreapp2.1/safari-api.deps.json
+/Users/chris/sdg-assignments/week-9/safari-api/bin/Debug/netcoreapp2.1/safari-api.runtimeconfig.json
+/Users/chris/sdg-assignments/week-9/safari-api/bin/Debug/netcoreapp2.1/safari-api.runtimeconfig.dev.json
+/Users/chris/sdg-assignments/week-9/safari-api/bin/Debug/netcoreapp2.1/safari-api.dll
+/Users/chris/sdg-assignments/week-9/safari-api/bin/Debug/netcoreapp2.1/safari-api.pdb
+/Users/chris/sdg-assignments/week-9/safari-api/obj/Debug/netcoreapp2.1/safari-api.csprojAssemblyReference.cache
+/Users/chris/sdg-assignments/week-9/safari-api/obj/Debug/netcoreapp2.1/safari-api.csproj.CoreCompileInputs.cache
+/Users/chris/sdg-assignments/week-9/safari-api/obj/Debug/netcoreapp2.1/safari-api.RazorAssemblyInfo.cache
+/Users/chris/sdg-assignments/week-9/safari-api/obj/Debug/netcoreapp2.1/safari-api.RazorAssemblyInfo.cs
+/Users/chris/sdg-assignments/week-9/safari-api/obj/Debug/netcoreapp2.1/safari-api.AssemblyInfoInputs.cache
+/Users/chris/sdg-assignments/week-9/safari-api/obj/Debug/netcoreapp2.1/safari-api.AssemblyInfo.cs
+/Users/chris/sdg-assignments/week-9/safari-api/obj/Debug/netcoreapp2.1/safari-api.RazorTargetAssemblyInfo.cache
+/Users/chris/sdg-assignments/week-9/safari-api/obj/Debug/netcoreapp2.1/safari-api.dll
+/Users/chris/sdg-assignments/week-9/safari-api/obj/Debug/netcoreapp2.1/safari-api.pdb
