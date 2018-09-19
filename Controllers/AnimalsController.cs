@@ -24,5 +24,22 @@ namespace safari_api.Controllers
         {
             return this.db.Animals;
         }
+
+        //POST api/animals
+        [HttpPost]
+        public ActionResult<Animal> Post([FromBody] string species)
+        {
+            var _animal = new Animal
+            {
+                Species = species,
+                LocationOfLastSeen = "Outside",
+            };
+
+            this.db.Add(_animal);
+            
+            this.db.SaveChanges();
+
+            return _animal;
+        }
     }
 }

@@ -7,7 +7,7 @@ namespace safari_api.Models
         public int Id { get; set; }
         public string Species { get; set; }
         public int CountOfTimesSeen { get; set; } = 1;
-        public int LocationOfLastSeen { get; set; }
+        public string LocationOfLastSeen { get; set; }
         public DateTime LastSeenTime { get; set; } = DateTime.Now;
     }
 }
