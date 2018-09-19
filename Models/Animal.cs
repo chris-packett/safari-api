@@ -1,7 +1,9 @@
 using System;
 
-namespace safari_api.Models {
-    public class Animal {
+namespace safari_api.Models 
+{
+    public class Animal 
+    {
         public int Id { get; set; }
         public string Species { get; set; }
         public int CountOfTimesSeen { get; set; } = 1;
