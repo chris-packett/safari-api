@@ -1,8 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using safari_api.Models;
 
-namespace safari-api
+namespace safari_api
 {
     public partial class SafariAdventureContext : DbContext
     {
@@ -19,12 +20,13 @@ namespace safari-api
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseNpgsql("server=localhost;database=SafariAdventure");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {}
+
+        public DbSet<Animal> Animals { get; set; }
     }
 }
