@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using safari_api.Models;
 
 namespace safari_api.Controllers 
 {
@@ -10,11 +11,18 @@ namespace safari_api.Controllers
     [ApiController]
     public class AnimalsController : ControllerBase
     {
+        private SafariAdventureContext db { get; set; }
+
+        public AnimalsController()
+        {
+            this.db = new SafariAdventureContext();
+        }
+
         //GET api/animals
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<Animal>> Get()
         {
-            return new string[] { "this", "is", "working" };
+            return this.db.Animals;
         }
     }
 }
