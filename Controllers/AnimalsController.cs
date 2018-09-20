@@ -18,6 +18,12 @@ namespace safari_api.Controllers
             this.db = new SafariAdventureContext();
         }
 
+        public class ResponseObject
+        {
+            public bool WasSuccessful { get; set; }
+            public object Results { get; set; }
+        }
+
         //GET api/animals
         [HttpGet]
         public ActionResult<IEnumerable<Animal>> Get()
@@ -25,14 +31,29 @@ namespace safari_api.Controllers
             return this.db.Animals;
         }
 
+        //GET api/animals/search?species=<<Species>>
+        [HttpGet("search")]
+        public ActionResult<ResponseObject> Get([FromQuery]string species)
+        {
+            var _animal = this.db.Animals.Where(f => f.Species == species).First();
+
+            var _rv = new ResponseObject
+            {
+                WasSuccessful = true,
+                Results = _animal
+            };
+
+            return _rv;
+        }
+
         //POST api/animals
         [HttpPost]
-        public ActionResult<Animal> Post([FromBody] string species)
+        public ActionResult<Animal> Post([FromBody] Animal animal)
         {
             var _animal = new Animal
             {
-                Species = species,
-                LocationOfLastSeen = "Outside",
+                Species = animal.Species,
+                LocationOfLastSeen = animal.LocationOfLastSeen,
             };
 
             this.db.Add(_animal);
