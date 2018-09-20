@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using safari_api.Models;
 
-namespace safari_api.Controllers 
+namespace safari_api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -32,8 +32,9 @@ namespace safari_api.Controllers
         }
 
         //GET api/animals/search?species=<<Species>>
-        [HttpGet("search")]
-        public ActionResult<ResponseObject> Get([FromQuery]string species)
+        [HttpGet]
+        [Route("search")]
+        public ActionResult<ResponseObject> Get([FromQuery] string species)
         {
             var _animal = this.db.Animals.Where(f => f.Species == species).First();
 
@@ -57,7 +58,7 @@ namespace safari_api.Controllers
             };
 
             this.db.Add(_animal);
-            
+
             this.db.SaveChanges();
 
             return _animal;
