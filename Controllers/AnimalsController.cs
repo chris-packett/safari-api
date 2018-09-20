@@ -63,5 +63,58 @@ namespace safari_api.Controllers
 
             return _animal;
         }
+
+        //GET api/animals/{location}
+        [HttpGet("{location}")]
+        public ActionResult<ResponseObject> GetByLocation(string location)
+        {
+            var _animal = this.db.Animals.FirstOrDefault(f => f.LocationOfLastSeen == location);
+
+            var _rv = new ResponseObject
+            {
+                WasSuccessful = true,
+                Results = _animal
+            };
+
+            return _rv;
+        }
+
+        //PUT api/animals/{species}
+        [HttpPut("{species}")]
+        public ActionResult<ResponseObject> Put(string species)
+        {
+            var _animal = this.db.Animals.FirstOrDefault(f => f.Species == species);
+
+            _animal.CountOfTimesSeen = _animal.CountOfTimesSeen + 1;
+
+            this.db.SaveChanges();
+
+            var _rv = new ResponseObject
+            {
+                WasSuccessful = true,
+                Results = _animal
+            };
+
+            return _rv;
+        }
+
+        //DELETE api/animals/{species}
+        [HttpDelete("{species}")]
+        public ActionResult<ResponseObject> Delete(string species)
+        {
+            var _animal = this.db.Animals.FirstOrDefault(f => f.Species == species);
+
+            this.db.Remove(_animal);
+
+            this.db.SaveChanges();
+
+            var _rv = new ResponseObject
+            {
+                WasSuccessful = true,
+                Results = _animal
+            };
+
+            return _rv;
+        }
     }
 }
