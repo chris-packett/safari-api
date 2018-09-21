@@ -32,20 +32,20 @@ namespace safari_api.Controllers
         }
 
         //GET api/animals/search?species=<<Species>>
-        [HttpGet]
-        [Route("search")]
-        public ActionResult<ResponseObject> Get([FromQuery] string species)
-        {
-            var _animal = this.db.Animals.Where(f => f.Species == species).First();
+        // [HttpGet]
+        // [Route("search")]
+        // public ActionResult<ResponseObject> Get([FromQuery] string species)
+        // {
+        //     var _animal = this.db.Animals.Where(f => f.Species == species).First();
 
-            var _rv = new ResponseObject
-            {
-                WasSuccessful = true,
-                Results = _animal
-            };
+        //     var _rv = new ResponseObject
+        //     {
+        //         WasSuccessful = true,
+        //         Results = _animal
+        //     };
 
-            return _rv;
-        }
+        //     return _rv;
+        // }
 
         //POST api/animals
         [HttpPost]
