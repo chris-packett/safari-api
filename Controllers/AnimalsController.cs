@@ -98,6 +98,24 @@ namespace safari_api.Controllers
             return _rv;
         }
 
+        //PUT api/animals/{species}/{amount}
+        [HttpPut("{species}/{amount}")]
+        public ActionResult<ResponseObject> Put(string species, string amount)
+        {
+            var _rv = new ResponseObject();
+
+            var _animal = this.db.Animals.FirstOrDefault(f => f.Species == species);
+
+            _animal.CountOfTimesSeen = _animal.CountOfTimesSeen + int.Parse(amount);
+
+            this.db.SaveChanges();
+
+            _rv.WasSuccessful = true;
+            _rv.Results = _animal;
+
+            return _rv;
+        }
+
         //DELETE api/animals/{species}
         [HttpDelete("{species}")]
         public ActionResult<ResponseObject> Delete(string species)
